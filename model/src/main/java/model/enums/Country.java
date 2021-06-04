@@ -1,5 +1,5 @@
-package enums;
+package model.enums;
 
-public enum County {
+public enum Country {
     BELARUS, RUSSIA, USA, CANADA, ENGLAND, POLAND, SPAIN, ITALY, JAPAN;
 }

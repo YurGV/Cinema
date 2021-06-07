@@ -4,7 +4,7 @@ import model.Seance;
 
 import java.util.List;
 
-public interface ISeanceService {
+public interface SeanceServiceImpl {
 
     List<Seance> getAllSeance();
     Seance getSeanceInfo(Long id);

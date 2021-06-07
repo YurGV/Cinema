@@ -5,9 +5,9 @@ import model.Hall;
 
 import java.util.List;
 
-public interface IHallService {
+public interface HallServiceImpl {
 
-    Hall editHall(String name, Integer capacity, Cinema cinema);
+    Hall editHall(Long id, String name, Integer capacity, Cinema cinema);
     List<Hall> sortByCapacity();
     List<Hall> sortByName();
 }

@@ -6,6 +6,5 @@ import java.util.List;
 
 public interface TicketServiceImpl {
 
-    List<Ticket> sortById();
 
 }

@@ -22,59 +22,16 @@ public class FilmService implements FilmServiceImpl {
     }
 
     @Override
-    public Optional<Film> getByName(String name) {
+    public Optional<Film> fndByName(String name) {
 
-        List<Film> filmList = filmDao.getAll();
-
-        return filmList.stream()
+        return filmDao.getAll().stream()
                 .filter(x -> x.getName().equals(name))
                 .findFirst();
     }
 
     @Override
-    public List<Film> sortByDate() {
-
-        List<Film> filmList = filmDao.getAll();
-
-        return filmList.stream()
-                .sorted(Comparator.comparing(Film::getYear))
-                .collect(Collectors.toList());
-    }
-
-    @Override
-    public List<Film> sortByGenre() {
-        List<Film> filmList = filmDao.getAll();
-
-        return filmList.stream()
-                .sorted(Comparator.comparing(Film::getGenre))
-                .collect(Collectors.toList());
-    }
-
-    @Override
-    public List<Film> sortByFormat() {
-        List<Film> filmList = filmDao.getAll();
-
-        return filmList.stream()
-                .sorted(Comparator.comparing(Film::getFormat))
-                .collect(Collectors.toList());
-    }
-
-    @Override
-    public List<Film> sortByAge() {
-        List<Film> filmList = filmDao.getAll();
-
-        return filmList.stream()
-                .sorted(Comparator.comparing(Film::getAge))
-                .collect(Collectors.toList());
-    }
-
-    @Override
-    public List<Film> sortByCountry() {
-        List<Film> filmList = filmDao.getAll();
-
-        return filmList.stream()
-                .sorted(Comparator.comparing(Film::getCounty))
-                .collect(Collectors.toList());
+    public List<Film> getAll() {
+        return filmDao.getAll();
     }
 
 

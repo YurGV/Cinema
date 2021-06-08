@@ -4,9 +4,8 @@ import model.Sector;
 import model.enums.Status;
 import service.PlaceServiceImpl;
 
-import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 public class PlaceService implements PlaceServiceImpl {
 
@@ -36,13 +35,4 @@ public class PlaceService implements PlaceServiceImpl {
         return editPlaceInfo;
     }
 
-    @Override
-    public List<Place> sortByStatus() {
-
-        List<Place> placeList = placeDao.getAll();
-
-        return placeList.stream()
-                .sorted(Comparator.comparing(Place::getStatus))
-                .collect(Collectors.toList());
-    }
 }

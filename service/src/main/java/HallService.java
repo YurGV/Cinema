@@ -30,22 +30,4 @@ public class HallService implements HallServiceImpl {
         return editHall;
     }
 
-    @Override
-    public List<Hall> sortByCapacity() {
-
-        List<Hall> hallList = hallDao.getAll();
-        return hallList.stream()
-                .sorted(Comparator.comparing(Hall::getCapacity))
-                .collect(Collectors.toList());
-    }
-
-    @Override
-    public List<Hall> sortByName() {
-
-        List<Hall> hallList = hallDao.getAll();
-
-        return hallList.stream()
-                .sorted(Comparator.comparing(Hall::getName))
-                .collect(Collectors.toList());
-    }
 }

@@ -1,6 +1,7 @@
+import dao.TicketDao;
 import model.Ticket;
 
-public class TicketDaoImpl extends AbstractDao<Ticket> implements dao.TicketDao {
+public class TicketDaoImpl extends AbstractDao<Ticket> implements TicketDao {
 
 
     @Override

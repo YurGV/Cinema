@@ -11,11 +11,8 @@ import java.util.Optional;
 
 public interface FilmServiceImpl {
 
-    Optional<Film> getByName(String name);
-    List<Film> sortByDate();
-    List<Film> sortByGenre();
-    List<Film> sortByFormat();
-    List<Film> sortByAge();
-    List<Film> sortByCountry();
+
+    Optional<Film> fndByName(String name);
+    List<Film> getAll();
     Film editFilmInfo(Long id, String name, Integer age, Date year, Integer durability, Country country, Format format, Genre genre);
 }

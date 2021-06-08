@@ -38,7 +38,6 @@ public class ClientService implements ClientIServiceImpl {
         client.setLastName(lastName);
         client.setEmail(email);
         client.setPassword(password);
-
         clientDao.save(client);
 
         return client;
@@ -47,9 +46,7 @@ public class ClientService implements ClientIServiceImpl {
     @Override
     public Optional<Client> findByName(final String firstName, String lastName) {
 
-        List<Client> clientList = clientDao.getAll();
-
-        return clientList.stream()
+        return clientDao.getAll().stream()
                 .filter(x -> x.getFirstName().equals(firstName))
                 .filter(x -> x.getLastName().equals(lastName))
                 .findFirst();

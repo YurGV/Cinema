@@ -14,21 +14,6 @@ public class SectorService implements SectorServiceImpl {
         this.sectorDao = sectorDao;
     }
 
-    @Override
-    public List<Sector> sortByPrice() {
 
-        List<Sector> sectorList = sectorDao.getAll();
-        return sectorList.stream()
-                .sorted(Comparator.comparing(Sector::getPrice))
-                .collect(Collectors.toList());
-    }
-
-    @Override
-    public List<Sector> sortByName() {
-        List<Sector> sectorList = sectorDao.getAll();
-        return sectorList.stream()
-                .sorted(Comparator.comparing(Sector::getName))
-                .collect(Collectors.toList());
-    }
 
 }

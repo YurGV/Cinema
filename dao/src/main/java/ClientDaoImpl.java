@@ -1,7 +1,8 @@
+import dao.ClientDao;
 import model.Client;
 
 
-public class ClientDaoImpl extends AbstractDao<Client> implements dao.ClientDao {
+public class ClientDaoImpl extends AbstractDao<Client> implements ClientDao {
 
 
     @Override
@@ -22,7 +23,7 @@ public class ClientDaoImpl extends AbstractDao<Client> implements dao.ClientDao 
         updClient.setLastName(entity.getLastName());
         updClient.setEmail(entity.getEmail());
         updClient.setPassword(entity.getPassword());
-        updClient.setTicketList(entity.getTicketList());
+        updClient.setTickets(entity.getTickets());
 
         return updClient;
 

@@ -1,6 +1,7 @@
+import dao.PlaceDao;
 import model.Place;
 
-public class PlaceDaoImpl extends AbstractDao<Place> implements dao.PlaceDao {
+public class PlaceDaoImpl extends AbstractDao<Place> implements PlaceDao {
 
 
     @Override

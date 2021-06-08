@@ -13,13 +13,6 @@ public class TicketService implements TicketServiceImpl {
     public TicketService(TicketDao ticketDao) {
         this.ticketDao = ticketDao;
     }
-    @Override
-    public List<Ticket> sortById() {
 
-        List<Ticket> ticketList = ticketDao.getAll();
 
-        return ticketList.stream()
-                .sorted(Comparator.comparing(Ticket::getId))
-                .collect(Collectors.toList());
-    }
 }

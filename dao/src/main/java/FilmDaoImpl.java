@@ -1,6 +1,7 @@
+import dao.FilmDao;
 import model.Film;
 
-public class FilmDaoImpl extends AbstractDao<Film> implements dao.FilmDao {
+public class FilmDaoImpl extends AbstractDao<Film> implements FilmDao {
 
 
     @Override

@@ -1,7 +1,8 @@
+import dao.SectorDao;
 import model.Sector;
 
 
-public class SectorDaoImpl extends AbstractDao<Sector> implements dao.SectorDao {
+public class SectorDaoImpl extends AbstractDao<Sector> implements SectorDao {
 
 
     @Override
@@ -20,7 +21,7 @@ public class SectorDaoImpl extends AbstractDao<Sector> implements dao.SectorDao 
 
         updSector.setName(entity.getName());
         updSector.setPrice(entity.getPrice());
-        updSector.setPlaceList(entity.getPlaceList());
+        updSector.setPlaces(entity.getPlaces());
         updSector.setHall(entity.getHall());
 
         return updSector;

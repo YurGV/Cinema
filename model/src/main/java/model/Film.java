@@ -33,8 +33,10 @@ public class Film {
     @Column
     private Country county;
     @Column
+    @Enumerated(EnumType.STRING)
     private Format format;
     @Column
+    @Enumerated(EnumType.STRING)
     private Genre genre;
 
     @ManyToOne

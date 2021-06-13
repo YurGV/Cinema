@@ -1,11 +1,17 @@
 import dao.GenericDao;
 
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContextType;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class AbstractDao<T> implements GenericDao<T> {
+
+//    @PersistenceContext(type = PersistenceContextType.TRANSACTION)
+//    private EntityManager entityManager;
 
     public  List<T> repository = new ArrayList<>() ;
 

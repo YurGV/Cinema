@@ -1,6 +1,8 @@
 import dao.HallDao;
 import model.Hall;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class HallDaoImpl extends AbstractDao<Hall> implements HallDao {
 
 

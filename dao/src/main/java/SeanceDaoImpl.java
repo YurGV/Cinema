@@ -1,6 +1,8 @@
 import dao.SeanceDao;
 import model.Seance;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class SeanceDaoImpl extends AbstractDao<Seance> implements SeanceDao {
 
 

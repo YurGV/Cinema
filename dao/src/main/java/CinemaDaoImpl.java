@@ -1,9 +1,10 @@
 
 import dao.CinemaDao;
 import model.Cinema;
+import org.springframework.stereotype.Repository;
 
 
-
+@Repository
 public class CinemaDaoImpl extends AbstractDao<Cinema> implements CinemaDao {
 
 

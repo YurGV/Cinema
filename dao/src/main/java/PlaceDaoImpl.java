@@ -1,6 +1,8 @@
 import dao.PlaceDao;
 import model.Place;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class PlaceDaoImpl extends AbstractDao<Place> implements PlaceDao {
 
 

@@ -1,13 +1,11 @@
 package model;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import model.enums.Country;
 import model.enums.Format;
 import model.enums.Genre;
-
 import javax.persistence.*;
 import java.util.Date;
 

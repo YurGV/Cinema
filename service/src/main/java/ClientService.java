@@ -1,19 +1,22 @@
 
 import dao.ClientDao;
+import lombok.RequiredArgsConstructor;
 import model.Client;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import service.ClientIServiceImpl;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
+@Transactional
+@RequiredArgsConstructor
+@Service
 public class ClientService implements ClientIServiceImpl {
 
+    @Autowired
     private final ClientDao clientDao;
-
-
-    public ClientService(ClientDao clientDao) {
-        this.clientDao = clientDao;
-    }
 
     @Override
     public Client addClient(String firstName, String lastName, String email, String password) {

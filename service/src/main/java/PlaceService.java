@@ -1,19 +1,21 @@
 import dao.PlaceDao;
+import lombok.RequiredArgsConstructor;
 import model.Place;
 import model.Sector;
 import model.enums.Status;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import service.PlaceServiceImpl;
+import javax.transaction.Transactional;
 
-import java.util.List;
 
-
+@Transactional
+@RequiredArgsConstructor
+@Service
 public class PlaceService implements PlaceServiceImpl {
 
+    @Autowired
     private final PlaceDao placeDao;
-
-    public PlaceService(PlaceDao placeDao) {
-        this.placeDao = placeDao;
-    }
 
     @Override
     public Place editStatus(Long id, Status status) {

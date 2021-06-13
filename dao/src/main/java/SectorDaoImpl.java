@@ -1,7 +1,8 @@
 import dao.SectorDao;
 import model.Sector;
+import org.springframework.stereotype.Repository;
 
-
+@Repository
 public class SectorDaoImpl extends AbstractDao<Sector> implements SectorDao {
 
 

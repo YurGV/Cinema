@@ -1,7 +1,8 @@
 import dao.ClientDao;
 import model.Client;
+import org.springframework.stereotype.Repository;
 
-
+@Repository
 public class ClientDaoImpl extends AbstractDao<Client> implements ClientDao {
 
 

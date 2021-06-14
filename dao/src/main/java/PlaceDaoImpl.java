@@ -1,6 +1,9 @@
+import dao.PlaceDao;
 import model.Place;
+import org.springframework.stereotype.Repository;
 
-public class PlaceDaoImpl extends AbstractDao<Place> implements dao.PlaceDao {
+@Repository
+public class PlaceDaoImpl extends AbstractDao<Place> implements PlaceDao {
 
 
     @Override

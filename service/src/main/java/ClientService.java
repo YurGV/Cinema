@@ -1,19 +1,22 @@
 
 import dao.ClientDao;
+import lombok.RequiredArgsConstructor;
 import model.Client;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import service.ClientIServiceImpl;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
+@Transactional
+@RequiredArgsConstructor
+@Service
 public class ClientService implements ClientIServiceImpl {
 
+    @Autowired
     private final ClientDao clientDao;
-
-
-    public ClientService(ClientDao clientDao) {
-        this.clientDao = clientDao;
-    }
 
     @Override
     public Client addClient(String firstName, String lastName, String email, String password) {
@@ -38,7 +41,6 @@ public class ClientService implements ClientIServiceImpl {
         client.setLastName(lastName);
         client.setEmail(email);
         client.setPassword(password);
-
         clientDao.save(client);
 
         return client;
@@ -47,9 +49,7 @@ public class ClientService implements ClientIServiceImpl {
     @Override
     public Optional<Client> findByName(final String firstName, String lastName) {
 
-        List<Client> clientList = clientDao.getAll();
-
-        return clientList.stream()
+        return clientDao.getAll().stream()
                 .filter(x -> x.getFirstName().equals(firstName))
                 .filter(x -> x.getLastName().equals(lastName))
                 .findFirst();

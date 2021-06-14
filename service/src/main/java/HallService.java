@@ -1,20 +1,23 @@
 import dao.HallDao;
+import lombok.RequiredArgsConstructor;
 import model.Cinema;
 import model.Hall;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import service.HallServiceImpl;
 
+import javax.transaction.Transactional;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Transactional
+@RequiredArgsConstructor
+@Service
 public class HallService implements HallServiceImpl {
 
+    @Autowired
     private final HallDao hallDao;
-
-    public HallService(HallDao hallDao) {
-        this.hallDao = hallDao;
-    }
-
 
     @Override
     public Hall editHall(Long id, String name, Integer capacity, Cinema cinema) {
@@ -30,22 +33,4 @@ public class HallService implements HallServiceImpl {
         return editHall;
     }
 
-    @Override
-    public List<Hall> sortByCapacity() {
-
-        List<Hall> hallList = hallDao.getAll();
-        return hallList.stream()
-                .sorted(Comparator.comparing(Hall::getCapacity))
-                .collect(Collectors.toList());
-    }
-
-    @Override
-    public List<Hall> sortByName() {
-
-        List<Hall> hallList = hallDao.getAll();
-
-        return hallList.stream()
-                .sorted(Comparator.comparing(Hall::getName))
-                .collect(Collectors.toList());
-    }
 }

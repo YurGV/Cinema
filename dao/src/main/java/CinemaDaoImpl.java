@@ -1,8 +1,11 @@
+
+import dao.CinemaDao;
 import model.Cinema;
+import org.springframework.stereotype.Repository;
 
 
-
-public class CinemaDaoImpl extends AbstractDao<Cinema> implements dao.CinemaDao {
+@Repository
+public class CinemaDaoImpl extends AbstractDao<Cinema> implements CinemaDao {
 
 
     @Override
@@ -24,9 +27,9 @@ public class CinemaDaoImpl extends AbstractDao<Cinema> implements dao.CinemaDao 
         updCinema.setEmail(entity.getEmail());
         updCinema.setAddress(entity.getAddress());
         updCinema.setNumberOfCinemaHall(entity.getNumberOfCinemaHall());
-        updCinema.setFilmList(entity.getFilmList());
-        updCinema.setSeanceList(entity.getSeanceList());
-        updCinema.setHallList(entity.getHallList());
+        updCinema.setFilms(entity.getFilms());
+        updCinema.setSeances(entity.getSeances());
+        updCinema.setHalls(entity.getHalls());
         return updCinema;
     }
 

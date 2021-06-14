@@ -1,19 +1,22 @@
 
 import dao.SeanceDao;
+import lombok.RequiredArgsConstructor;
 import model.Seance;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import service.SeanceServiceImpl;
 
 
+import javax.transaction.Transactional;
 import java.util.List;
 
+@Transactional
+@RequiredArgsConstructor
+@Service
 public class SeanceService implements SeanceServiceImpl {
 
+    @Autowired
     private final SeanceDao seanceDao;
-
-    public SeanceService(SeanceDao seanceDao) {
-        this.seanceDao = seanceDao;
-    }
-
 
     @Override
     public List<Seance> getAllSeance() {

@@ -7,10 +7,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="exception" />
+        <module name="dao" />
+        <module name="Dao" />
+        <module name="service" />
+        <module name="Model" />
+        <module name="Service" />
         <module name="model" />
         <module name="api" />
-        <module name="dao" />
-        <module name="service" />
+        <module name="Api" />
+        <module name="Exception" />
       </profile>
     </annotationProcessing>
   </component>

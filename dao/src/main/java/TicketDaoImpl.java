@@ -1,6 +1,9 @@
+import dao.TicketDao;
 import model.Ticket;
+import org.springframework.stereotype.Repository;
 
-public class TicketDaoImpl extends AbstractDao<Ticket> implements dao.TicketDao {
+@Repository
+public class TicketDaoImpl extends AbstractDao<Ticket> implements TicketDao {
 
 
     @Override

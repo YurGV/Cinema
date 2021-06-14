@@ -1,6 +1,9 @@
+import dao.HallDao;
 import model.Hall;
+import org.springframework.stereotype.Repository;
 
-public class HallDaoImpl extends AbstractDao<Hall> implements dao.HallDao {
+@Repository
+public class HallDaoImpl extends AbstractDao<Hall> implements HallDao {
 
 
     @Override
@@ -20,8 +23,8 @@ public class HallDaoImpl extends AbstractDao<Hall> implements dao.HallDao {
         updHall.setName(entity.getName());
         updHall.setCapacity(entity.getCapacity());
         updHall.setCinema(entity.getCinema());
-        updHall.setSectorList(entity.getSectorList());
-        updHall.setSeanceList(entity.getSeanceList());
+        updHall.setSectors(entity.getSectors());
+        updHall.setSeances(entity.getSeances());
 
         return updHall;
     }

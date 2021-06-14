@@ -1,13 +1,11 @@
 package model;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import model.enums.Country;
 import model.enums.Format;
 import model.enums.Genre;
-
 import javax.persistence.*;
 import java.util.Date;
 
@@ -33,8 +31,10 @@ public class Film {
     @Column
     private Country county;
     @Column
+    @Enumerated(EnumType.STRING)
     private Format format;
     @Column
+    @Enumerated(EnumType.STRING)
     private Genre genre;
 
     @ManyToOne

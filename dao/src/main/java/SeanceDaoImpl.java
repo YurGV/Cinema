@@ -1,6 +1,9 @@
+import dao.SeanceDao;
 import model.Seance;
+import org.springframework.stereotype.Repository;
 
-public class SeanceDaoImpl extends AbstractDao<Seance> implements dao.SeanceDao {
+@Repository
+public class SeanceDaoImpl extends AbstractDao<Seance> implements SeanceDao {
 
 
 
@@ -21,7 +24,7 @@ public class SeanceDaoImpl extends AbstractDao<Seance> implements dao.SeanceDao 
         updSeance.setFilm(entity.getFilm());
         updSeance.setHall(entity.getHall());
         updSeance.setCinema(entity.getCinema());
-        updSeance.setTicketList(entity.getTicketList());
+        updSeance.setTickets(entity.getTickets());
 
         return updSeance;
     }

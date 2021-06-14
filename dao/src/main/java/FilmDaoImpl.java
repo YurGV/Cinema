@@ -1,6 +1,9 @@
+import dao.FilmDao;
 import model.Film;
+import org.springframework.stereotype.Repository;
 
-public class FilmDaoImpl extends AbstractDao<Film> implements dao.FilmDao {
+@Repository
+public class FilmDaoImpl extends AbstractDao<Film> implements FilmDao {
 
 
     @Override

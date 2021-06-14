@@ -8,6 +8,6 @@ import java.util.List;
 public interface HallServiceImpl {
 
     Hall editHall(Long id, String name, Integer capacity, Cinema cinema);
-    List<Hall> sortByCapacity();
-    List<Hall> sortByName();
+
+
 }

@@ -1,10 +1,14 @@
 import dao.FilmDao;
+import lombok.RequiredArgsConstructor;
 import model.Film;
 import model.enums.Country;
 import model.enums.Format;
 import model.enums.Genre;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import service.FilmServiceImpl;
 
+import javax.transaction.Transactional;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
@@ -12,69 +16,25 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 
-
+@Transactional
+@RequiredArgsConstructor
+@Service
 public class FilmService implements FilmServiceImpl {
 
+    @Autowired
     private final FilmDao filmDao;
 
-    public FilmService(FilmDao filmDao) {
-        this.filmDao = filmDao;
-    }
-
     @Override
-    public Optional<Film> getByName(String name) {
+    public Optional<Film> fndByName(String name) {
 
-        List<Film> filmList = filmDao.getAll();
-
-        return filmList.stream()
+        return filmDao.getAll().stream()
                 .filter(x -> x.getName().equals(name))
                 .findFirst();
     }
 
     @Override
-    public List<Film> sortByDate() {
-
-        List<Film> filmList = filmDao.getAll();
-
-        return filmList.stream()
-                .sorted(Comparator.comparing(Film::getYear))
-                .collect(Collectors.toList());
-    }
-
-    @Override
-    public List<Film> sortByGenre() {
-        List<Film> filmList = filmDao.getAll();
-
-        return filmList.stream()
-                .sorted(Comparator.comparing(Film::getGenre))
-                .collect(Collectors.toList());
-    }
-
-    @Override
-    public List<Film> sortByFormat() {
-        List<Film> filmList = filmDao.getAll();
-
-        return filmList.stream()
-                .sorted(Comparator.comparing(Film::getFormat))
-                .collect(Collectors.toList());
-    }
-
-    @Override
-    public List<Film> sortByAge() {
-        List<Film> filmList = filmDao.getAll();
-
-        return filmList.stream()
-                .sorted(Comparator.comparing(Film::getAge))
-                .collect(Collectors.toList());
-    }
-
-    @Override
-    public List<Film> sortByCountry() {
-        List<Film> filmList = filmDao.getAll();
-
-        return filmList.stream()
-                .sorted(Comparator.comparing(Film::getCounty))
-                .collect(Collectors.toList());
+    public List<Film> getAll() {
+        return filmDao.getAll();
     }
 
 

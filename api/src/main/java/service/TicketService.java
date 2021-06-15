@@ -4,7 +4,7 @@ import model.Ticket;
 
 import java.util.List;
 
-public interface TicketServiceImpl {
+public interface TicketService {
 
 
 }

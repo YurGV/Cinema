@@ -10,7 +10,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "seances")
+@Table(name = "seance")// давай все-таки в единственном числе, мно просто какпец как глаз режет
 public class Seance {
 
     @Id

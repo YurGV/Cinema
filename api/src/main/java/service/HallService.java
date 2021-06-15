@@ -5,7 +5,7 @@ import model.Hall;
 
 import java.util.List;
 
-public interface HallServiceImpl {
+public interface HallService {
 
     Hall editHall(Long id, String name, Integer capacity, Cinema cinema);
 

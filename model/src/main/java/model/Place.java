@@ -10,7 +10,7 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "places")
+@Table(name = "place")// давай все-таки в единственном числе, мно просто какпец как глаз режет
 public class Place {
 
     @Id

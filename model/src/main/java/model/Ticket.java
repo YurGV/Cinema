@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "sectors")
+@Table(name = "ticket")// давай все-таки в единственном числе, мно просто какпец как глаз режет
 public class Ticket {
 
     @Id

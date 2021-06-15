@@ -4,8 +4,8 @@ import model.Seance;
 
 import java.util.List;
 
-public interface SeanceServiceImpl {
+public interface SeanceService {
 
-    List<Seance> getAllSeance();
+    List<Seance> getAllSeances();
     Seance getSeanceInfo(Long id);
 }

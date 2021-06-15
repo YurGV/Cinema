@@ -13,7 +13,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "films")
+@Table(name = "film")// давай все-таки в единственном числе, мно просто какпец как глаз режет
 public class Film {
 
 

@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import model.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import service.ClientIServiceImpl;
+import service.ClientIService;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -13,7 +13,8 @@ import java.util.Optional;
 @Transactional
 @RequiredArgsConstructor
 @Service
-public class ClientService implements ClientIServiceImpl {
+// реализация, если она не абстракт, должна имплементить все методы интерфейса
+public class ClientServiceImpl implements ClientIService {
 
     @Autowired
     private final ClientDao clientDao;

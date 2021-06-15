@@ -6,20 +6,17 @@ import model.enums.Format;
 import model.enums.Genre;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import service.FilmServiceImpl;
 
 import javax.transaction.Transactional;
-import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 
 @Transactional
 @RequiredArgsConstructor
 @Service
-public class FilmService implements FilmServiceImpl {
+public class FilmServiceImpl implements service.FilmService {
 
     @Autowired
     private final FilmDao filmDao;

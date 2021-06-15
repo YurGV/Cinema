@@ -11,7 +11,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "sectors")
+@Table(name = "sector")// давай все-таки в единственном числе, мно просто какпец как глаз режет
 public class Sector {
 
     @Id

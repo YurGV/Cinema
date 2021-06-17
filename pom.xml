@@ -14,11 +14,6 @@
         <module>api</module>
         <module>service</module>
         <module>dao</module>
-        <module>api</module>
-        <module>dao</module>
-        <module>exception</module>
-        <module>model</module>
-        <module>service</module>
     </modules>
     <dependencies>
         <dependency>

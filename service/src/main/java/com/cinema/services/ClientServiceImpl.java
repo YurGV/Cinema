@@ -1,7 +1,8 @@
 package com.cinema.services;
 
-import com.cinema.exception.ExceptionHandler.UserNotFoundException;
+
 import com.cinema.dao.ClientDao;
+import com.cinema.exception.ExceptionHandler.UserNotFoundException;
 import com.cinema.service.ClientIService;
 import lombok.RequiredArgsConstructor;
 import com.cinema.model.Client;

@@ -13,20 +13,11 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-
-@ComponentScan(basePackages = {"com.cinema.dao", "com.cinema.service", "com.cinema.controller"})
-@EnableTransactionManagement
 @Configuration
 @PropertySource("classpath.application.properties")
 public class JpaConfiguration {
 
-    public static void main(String[] args) {
-        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(JpaConfiguration.class);
 
-        for (String beanName : applicationContext.getBeanDefinitionNames()) {
-            System.out.println(beanName);
-        }
-    }
 
     @Value("${database.driverClassName}")
     private String driverClassName;

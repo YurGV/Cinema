@@ -9,10 +9,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
-public interface FilmServiceImpl {
+public interface FilmService {
 
 
-    Optional<Film> fndByName(String name);
+    Film fndByName(String name);
     List<Film> getAll();
     Film editFilmInfo(Long id, String name, Integer age, Date year, Integer durability, Country country, Format format, Genre genre);
 }

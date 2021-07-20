@@ -14,7 +14,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-
+//а где будем искать завасимости для внедрения?
+// @ComponentScan(basePackages = "имя пакета для сканирования")
 @Configuration
 @PropertySource("classpath.application.properties")
 public class JpaConfiguration {
@@ -37,6 +38,9 @@ public class JpaConfiguration {
     private String hibernateLazyLoadNoTrans;
     @Value("${hibernate.use_jdbc_metadata_defaults}")
     private String hibernateTempUseJdbcMetadataDefault;
+
+    //Вот ты подобавлял классы, а откуда они должны появиться тут? Ты же не сам их будешь пасить, правильно?
+    // Значит надо зависимость на либу/фреймворк, корорый соддержит этот класс
 
     @Bean
     public DataSource dataSource() {

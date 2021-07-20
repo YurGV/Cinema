@@ -8,7 +8,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "clients")
+@Table(name = "client")// давай все-таки в единственном числе, мно просто какпец как глаз режет
 public class Client {
 
     @Id

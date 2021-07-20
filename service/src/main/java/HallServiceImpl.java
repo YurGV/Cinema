@@ -4,17 +4,13 @@ import model.Cinema;
 import model.Hall;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import service.HallServiceImpl;
 
 import javax.transaction.Transactional;
-import java.util.Comparator;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Transactional
 @RequiredArgsConstructor
 @Service
-public class HallService implements HallServiceImpl {
+public class HallServiceImpl implements service.HallService {
 
     @Autowired
     private final HallDao hallDao;

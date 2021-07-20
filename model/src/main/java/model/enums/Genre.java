@@ -1,5 +1,5 @@
 package model.enums;
 
 public enum Genre {
-    ACTION, TRILLER, COMEDY, HISTORY, SCIENCE , CARTOON;
+    ACTION, THRILLER, COMEDY, HISTORY, SCIENCE , CARTOON;
 }

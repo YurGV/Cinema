@@ -5,14 +5,14 @@ import model.Sector;
 import model.enums.Status;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import service.PlaceServiceImpl;
+
 import javax.transaction.Transactional;
 
 
 @Transactional
 @RequiredArgsConstructor
 @Service
-public class PlaceService implements PlaceServiceImpl {
+public class PlaceServiceImpl implements service.PlaceService {
 
     @Autowired
     private final PlaceDao placeDao;

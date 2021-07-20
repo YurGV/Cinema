@@ -15,7 +15,18 @@
         <module>service</module>
         <module>dao</module>
         <module>controller</module>
+        <module>dto</module>
+        <module>configuration</module>
     </modules>
+
+    <properties>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <java.version>1.8</java.version>
+        <hiber.version>5.4.23.Final</hiber.version>
+        <hiber-validator.version>6.1.6.Final</hiber-validator.version>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -55,13 +66,14 @@
             <version>5.4.32.Final</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-jpamodelgen</artifactId>
+            <version>5.4.32.Final</version>
+        </dependency>
+
     </dependencies>
 
-    <properties>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <hiber.version>5.4.23.Final</hiber.version>
-        <hiber-validator.version>6.1.6.Final</hiber-validator.version>
-    </properties>
+
 
 </project>

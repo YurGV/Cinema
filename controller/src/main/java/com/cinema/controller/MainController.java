@@ -17,7 +17,7 @@ public class MainController {
 
         ClientServiceImpl clientService = applicationContext.getBean("clientService", ClientServiceImpl.class);
 
-        Client client = clientService.findByName("name1", "name2");
-        System.out.println(client);
+      //  Client client = clientService.findByName("name1", "name2");
+      //  System.out.println(client);
     }
 }

@@ -20,4 +20,6 @@ public class CinemaServiceImpl implements CinemaService {
         return cinemaDao.getById(id);
     }
 
+
+
 }

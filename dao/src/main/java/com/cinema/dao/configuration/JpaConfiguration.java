@@ -7,26 +7,24 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-@PropertySource("classpath.application.properties")
+@PropertySource("classpath.application.properties") //источник свойств
 public class JpaConfiguration {
 
-
-
-    @Value("${database.driverClassName}")
+    @Value("${database.diverClassName}")
     private String driverClassName;
-    @Value("${database.databaseUrl}")
+    @Value("${database.url}")
     private String databaseUrl;
     @Value("${database.username}")
     private String username;
     @Value("${database.password}")
     private String password;
+
     @Value("${hibernate.hbm2ddl.auto}")
     private String hibernateHbm2ddlAuto;
     @Value("${hibernate.show_sql:false}")
@@ -74,4 +72,6 @@ public class JpaConfiguration {
         properties.setProperty("hibernate.use_jdbc_metadata_defaults", hibernateTempUseJdbcMetadataDefault);
         return properties;
     }
+
+
 }

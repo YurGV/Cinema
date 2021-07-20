@@ -1,4 +1,4 @@
-package com.cinema.dto.mappingDto;
+package com.cinema.dto.modelMappingDto;
 
 import com.cinema.dto.modelDto.SeanceDto;
 import com.cinema.model.Seance;

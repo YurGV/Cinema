@@ -1,4 +1,4 @@
-package com.cinema.dto.dozerMapper;
+package com.cinema.dto.dozer;
 
 
 import com.cinema.dto.modelDto.FilmDto;

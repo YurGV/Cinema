@@ -1,6 +1,6 @@
 package com.cinema.dto.modelDto;
 
-import com.cinema.model.Place;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,5 +19,5 @@ public class SectorDto {
 
     private BigDecimal price;
 
-    private List<Place> places;
+    private List<PlaceDto> places;
 }

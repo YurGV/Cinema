@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class PlaceMapper extends AbstractMapper<Place,PlaceDto>{
 
-    @Autowired
     public PlaceMapper() {
         super(Place.class, PlaceDto.class);
     }

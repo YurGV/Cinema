@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class FilmMapper extends AbstractMapper<Film, FilmDto>{
 
-    @Autowired
+
     public FilmMapper() {
         super(Film.class, FilmDto.class);
     }

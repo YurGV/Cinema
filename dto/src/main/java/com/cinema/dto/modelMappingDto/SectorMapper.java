@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class SectorMapper extends AbstractMapper<Sector, SectorDto>{
 
-    @Autowired
+
     public SectorMapper() {
         super(Sector.class, SectorDto.class);
     }

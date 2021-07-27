@@ -11,8 +11,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class SectorServiceImpl implements SectorService {
 
-    @Autowired
-    private final SectorDao sectorDao;
 
+    private final SectorDao sectorDao;
 
 }

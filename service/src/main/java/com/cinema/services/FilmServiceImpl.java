@@ -1,58 +1,50 @@
 package com.cinema.services;
 
-import com.cinema.exception.ExceptionHandler.UserNotFoundException;
-import com.cinema.dao.FilmDao;
-import com.cinema.model.enums.Country;
-import com.cinema.model.enums.Format;
-import com.cinema.model.enums.Genre;
+import com.cinema.dao.FilmDaoImpl;
+import com.cinema.dto.modelDto.FilmDto;
+import com.cinema.dto.modelMappingDto.FilmMapper;
 import com.cinema.service.FilmService;
-import lombok.RequiredArgsConstructor;
-import com.cinema.model.Film;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 
-@RequiredArgsConstructor
 @Service
 public class FilmServiceImpl implements FilmService {
 
+    FilmDaoImpl filmDao;
+    FilmMapper filmMapper;
+
     @Autowired
-    private final FilmDao filmDao;
+    public FilmServiceImpl(FilmDaoImpl filmDao, FilmMapper filmMapper) {
+    this.filmDao = filmDao;
+    this.filmMapper = filmMapper;
+    }
 
     @Override
-    public Film findByName(String name) {
+    public FilmDto findByName(String name) {
 
+//        return filmDao.getAll().stream()
+//                .filter(x -> x.getName().equals(name))
+//                .findFirst()
+//                .orElseThrow(UserNotFoundException::new);
+        return null;
+    }
+
+    @Override
+    public List<FilmDto> getAll() {
         return filmDao.getAll().stream()
-                .filter(x -> x.getName().equals(name))
-                .findFirst()
-                .orElseThrow(UserNotFoundException::new);
+                .map(filmMapper::toDto)
+                .collect(Collectors.toList());
     }
-
-    @Override
-    public List<Film> getAll() {
-        return filmDao.getAll();
-    }
-
 
     @Override
     @Transactional
-    public Film updateFilmInfo(Long id, String name, Integer age, Date year, Integer durability, Country country, Format format, Genre genre) {
-
-        Film editFilm = filmDao.getById(id);
-
-        editFilm.setName(name);
-        editFilm.setAge(age);
-        editFilm.setYear(year);
-        editFilm.setDurability(durability);
-        editFilm.setCounty(country);
-        editFilm.setFormat(format);
-        editFilm.setGenre(genre);
-
-        filmDao.save(editFilm);
+    public FilmDto updateFilmInfo(FilmDto editFilm) {
+        filmDao.save(filmMapper.toEntity(editFilm));
         return editFilm;
     }
 }

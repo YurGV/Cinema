@@ -1,30 +1,34 @@
 package com.cinema.services;
 
 import com.cinema.dao.SeanceDao;
-import com.cinema.model.Seance;
+import com.cinema.dto.modelDto.FilmDto;
+import com.cinema.dto.modelDto.SeanceDto;
+import com.cinema.dto.modelMappingDto.SeanceMapper;
 import com.cinema.service.SeanceService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 
 @RequiredArgsConstructor
 @Service
 public class SeanceServiceImpl implements SeanceService {
 
-    @Autowired
     private final SeanceDao seanceDao;
-
+    private final SeanceMapper seanceMapper;
 
     @Override
-    public List<Seance> getAllSeances() {
-        return seanceDao.getAll();
+    public List<SeanceDto> getAllSeances() {
+        return seanceDao.getAll().stream()
+                .map(seanceMapper::toDto)
+                .collect(Collectors.toList());
     }
 
     @Override
-    public Seance getSeanceInfo(Long id) {
-        return seanceDao.getById(id);
+    public SeanceDto getSeance(Long id) {
+        return seanceMapper.toDto(seanceDao.getById(id));
     }
 }
+

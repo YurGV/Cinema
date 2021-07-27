@@ -7,6 +7,7 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
@@ -14,6 +15,7 @@ import java.util.Properties;
 
 @Configuration
 @PropertySource("classpath.application.properties") //источник свойств
+@EnableTransactionManagement
 public class JpaConfiguration {
 
     @Value("${database.diverClassName}")
@@ -40,8 +42,14 @@ public class JpaConfiguration {
     // Значит надо зависимость на либу/фреймворк, корорый соддержит этот класс
 
     @Bean
-    public DataSource dataSource() {
-        return new DriverManagerDataSource(databaseUrl, username, password);
+    public DataSource dataSource() {                       //JDBC Template для подключения к БД (это выше уровень чем просто JDBC)
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName(driverClassName);
+        dataSource.setUrl(databaseUrl);
+        dataSource.setUsername(username);
+        dataSource.setPassword(password);
+        return dataSource;
+        //return new DriverManagerDataSource(driverClassName, databaseUrl, username, password);
     }
 
     @Bean

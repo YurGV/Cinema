@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class HallMapper extends AbstractMapper<Hall, HallDto>{
 
-    @Autowired
+
     public HallMapper() {
         super(Hall.class, HallDto.class);
     }

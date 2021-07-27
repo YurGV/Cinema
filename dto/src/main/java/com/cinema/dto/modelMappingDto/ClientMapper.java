@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ClientMapper extends AbstractMapper<Client, ClientDto> {
 
-    @Autowired
+
     public ClientMapper() {
         super(Client.class, ClientDto.class);
     }

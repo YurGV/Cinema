@@ -1,6 +1,6 @@
 package com.cinema.dto.modelDto;
 
-import com.cinema.model.Cinema;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,6 +19,6 @@ public class HallDto {
     @NotNull
     private Integer capacity;
 
-    private Cinema cinema;
+    private CinemaDto cinema;
 
 }

@@ -1,8 +1,9 @@
 package com.cinema.service;
 
-import com.cinema.model.Cinema;
+import com.cinema.dto.modelDto.CinemaDto;
+
 
 public interface CinemaService {
 
-    Cinema getCinemaInfo(Long id);
+    CinemaDto getCinema(Long id);
 }
